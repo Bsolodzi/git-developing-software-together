@@ -39,11 +39,11 @@ If you want to try the command line, here are the core git commands:
 -   `git commit -m "A very descriptive message` to commit the files on the staging area.
 :::
 
-## Did you mentioned remote repository?
+## Did I mentioned remote repository?
 
 Yes, before we went through a **local workflow**. The repo lives in your computer and that's it. But, you can also connect the **local repository** with a **remote repository**. For this workshop we are going to use [GitHub](https://www.github.com) to host remote repositories, but there are other options you can explore, such as [GitLab](https://about.gitlab.com/).
 
-Let's imagine we have a local repository, we made some commits and we want to send those changes to the remote repository (we'll how to create the remote repository later). For that we **push** the commits to the remote repository and the two repos are "up to date".
+Let's imagine we have a local repository, we made some commits and we want to send those changes to the remote repository (we'll see how to create the remote repository later). For that we **push** the commits to the remote repository and the two repos are "up to date".
 
 A team mate makes a change to a file and push it to the remote repository. Now, your local repo is "outdated" and you need to download those new commits from the remote repository. You **pull** the commits.
 
@@ -60,7 +60,7 @@ If you want to try the command line, here are the git commands:
 
 ## Introduce yourself to Git
 
-Before you create your first repository you need to make sure that git and RStudio are friends and that git knows you. If you follow the [pre-workshop instructions](http://localhost:4321/reproducibility-with-r/materials/day0#git-and-github), RStudio, git, and GitHub are definitely talking to each other.
+Before you create your first repository you need to make sure that git and RStudio are friends and that git knows you. If you follow the [pre-workshop instructions](preparation.html), RStudio, git, and GitHub are definitely talking to each other.
 
 ::: {.alert .alert-dismissible .alert-primary}
 You can check that RStudio "sees" git by going to `Tools --> Global Options --> Git/SVN`. There you should find the path in your computer to the git installation.
