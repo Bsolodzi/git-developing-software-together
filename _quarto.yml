@@ -1,0 +1,22 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Developing Software Together"
+  lang: es
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: preparation.qmd
+        text: "Preparation"
+      - href: materials.qmd
+        text: "Materiales"
+
+format:
+  html:
+    theme: sandstone
+    toc: true
+
+editor: visual
