@@ -1,0 +1,100 @@
+---
+title: "Developing Software Together"
+author: "Pao Corrales y Yani Bellini Saibene"
+format: 
+  revealjs:
+    theme: default
+    self-contained: true
+---
+
+## Hi and welcome!
+
+:::: {.columns}
+::: {.column width="50%"}
+```{r}
+#| echo: false
+#| fig.align: 'center'
+#| out.width: '50%' 
+
+knitr::include_graphics("images/pao_circle.png")
+```
+
+[fosstodon.org/\@paocorrales](https://fosstodon.org/@paocorrales)
+
+[paocorrales.github.io](https://paocorrales.github.io/)
+:::
+
+
+::: {.column width="50%"}
+
+```{r}
+#| echo: false
+#| fig.align: 'center'
+#| out.width: '50%' 
+
+knitr::include_graphics("images/yani_circle.png")
+```
+
+[fosstodon.org/\@yabellini](https://fosstodon.org/@yabellini)
+
+[yabellini.netlify.app/](https://yabellini.netlify.app/)
+:::
+::::
+
+------------------------------------------------------------------------
+
+## About this workshop
+
+:::: {.columns}
+::: {.column width="40%"}
+-   Why using git
+-   How to use git (and GitHub)
+-   How to work git in the context of writing R code
+-   How to colaborate with others
+:::
+
+::: {.column width="60%"}
+
+```{r}
+#| echo: false
+
+knitr::include_graphics("https://cdn.myportfolio.com/45214904-6a61-4e23-98d6-b140f8654a40/68739659-fb6f-41e8-9813-32e1de3d82c0_rw_1920.png?h=4b046efe7664ab833358c241b10bd8e6")
+```
+:::
+::::
+
+------------------------------------------------------------------------
+
+Do you have something like this in your computer?
+
+    /home/pao/Documents/thesis
+    ├── abstract.R
+    ├── thesis.Rmd
+    ├── thesis_reviwed.Rmd
+    ├── thesis_reviwed2.Rmd
+    ├── thesis_final.Rmd
+    ├── thesis_finalfinal.Rmd
+    ├── this_is_it.Rmd
+    ├── now_this_is_it_for_real_this_time_i_swear.Rmd
+    └── FINAL.Rmd
+
+------------------------------------------------------------------------
+
+## Control version cycle
+
+![The figure shows the states of a file: untracked or tracked. When it is tracked by the repository, the file can be staged, committed or modified. With the add action the file is "staged", with the commit action the file is "saved" to the repository. This cycles repeats teach time the file is modified.](images/file_cycle2.png)
+
+
+------------------------------------------------------------------------
+
+## Our workflow
+
+![Concept model of a workflow using RStudio projects and git. Files are added to the staging area, and then commited to the local repository. You can push commits to the remote repository and pull new commits to your computer.](images/local_remote.png)
+
+------------------------------------------------------------------------
+
+## Working with others
+
+
+![Concep model of the remote workflow. A foreign remote repository can be forked to an owned remote repository with a "fork". The remote repository is copied into a local repository with a "clone". Files inside the local repository and the remote repository are synced with push and pull. The owned remote repository can be merged into the foreign remote repository with a pull request.](images/pull-request.png)
+
