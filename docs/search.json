@@ -77,6 +77,41 @@
     "text": "Resources\nHappy git with R, by Jenny Bryan\nTaller de git developed by Yanina Bellini Saibene and Marysol Gatti (in Spanish)"
   },
   {
+    "objectID": "presentation.html#hi-and-welcome",
+    "href": "presentation.html#hi-and-welcome",
+    "title": "Developing Software Together",
+    "section": "Hi and welcome!",
+    "text": "Hi and welcome!\n\n\n\n\n\n\n\n\n\n\n\nfosstodon.org/@paocorrales\npaocorrales.github.io\n\n\n\n\n\n\n\n\n\n\nfosstodon.org/@yabellini\nyabellini.netlify.app/"
+  },
+  {
+    "objectID": "presentation.html#about-this-workshop",
+    "href": "presentation.html#about-this-workshop",
+    "title": "Developing Software Together",
+    "section": "About this workshop",
+    "text": "About this workshop\n\n\n\nWhy using git\nHow to use git (and GitHub)\nHow to work git in the context of writing R code\nHow to colaborate with others"
+  },
+  {
+    "objectID": "presentation.html#control-version-cycle",
+    "href": "presentation.html#control-version-cycle",
+    "title": "Developing Software Together",
+    "section": "Control version cycle",
+    "text": "Control version cycle\n\nThe figure shows the states of a file: untracked or tracked. When it is tracked by the repository, the file can be staged, committed or modified. With the add action the file is “staged”, with the commit action the file is “saved” to the repository. This cycles repeats teach time the file is modified."
+  },
+  {
+    "objectID": "presentation.html#our-workflow",
+    "href": "presentation.html#our-workflow",
+    "title": "Developing Software Together",
+    "section": "Our workflow",
+    "text": "Our workflow\n\nConcept model of a workflow using RStudio projects and git. Files are added to the staging area, and then commited to the local repository. You can push commits to the remote repository and pull new commits to your computer."
+  },
+  {
+    "objectID": "presentation.html#working-with-others",
+    "href": "presentation.html#working-with-others",
+    "title": "Developing Software Together",
+    "section": "Working with others",
+    "text": "Working with others\n\n\nConcep model of the remote workflow. A foreign remote repository can be forked to an owned remote repository with a “fork”. The remote repository is copied into a local repository with a “clone”. Files inside the local repository and the remote repository are synced with push and pull. The owned remote repository can be merged into the foreign remote repository with a pull request."
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Welcome!",
