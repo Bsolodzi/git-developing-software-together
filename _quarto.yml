@@ -11,6 +11,8 @@ website:
         text: Home
       - href: preparation.qmd
         text: "Preparation"
+      - href: presentation.qmd
+        text: "Let's beging!"
       - href: materials.qmd
         text: "Materiales"
 
