@@ -36,7 +36,7 @@ So, we mentioned `add` and `commit`, these are git commands. If you have experie
 If you want to try the command line, here are the core git commands:
 
 -   `git add <file>` to add a file to the staging area.
--   `git commit -m "A very descriptive message` to commit the files on the staging area.
+-   `git commit -m "A very descriptive message"` to commit the files on the staging area.
 :::
 
 ## Did I mentioned remote repository?
@@ -85,6 +85,13 @@ git config --global user.email 'jane@example.com'
 ```
 :::
 
+::: {.alert .alert-dismissible .alert-primary}
+You can also configure git from the command line:
+
+-   `git config --global user.name "Your Name"` to configure your name, it can be anything but remember that it's public.
+-   `git config --global user.email youremail@example.com` to add your email (the same you used for the GitHub account).
+:::
+
 ## Creating a new repository
 
 There are many ways to start a new repository, locally in your computer using the command line or an interface, from GitHub (or its friends), from RStudio! Here we'll show you how to create a repo from GitHub, associate it to an RStudio project and work with it. But keep in mind that there are many other ways of working with git.
@@ -118,6 +125,18 @@ Before going back to RStudio, copy the url for the repository. For example `http
 The new folder in your computer will be a git repository, linked to a remote GitHub repository and an RStudio Project at the same time. This workflow also makes sure that all the configuration between the local and remote repos are done correctly.
 
 It also adds a `.gitignore` file that includes a list of files that we don't need to track (i.e. `.Rhistory`).
+
+::: {.alert .alert-dismissible .alert-primary}
+Create a new repository from command line:
+
+If you already have a repote repository:
+
+-   `git clone <repo url>`
+
+If you want to start a local repository from scratch in the folder you are located:
+
+-   `git init`
+:::
 
 ## Local changes
 
