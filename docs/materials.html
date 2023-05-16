@@ -242,7 +242,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>If you want to try the command line, here are the core git commands:</p>
 <ul>
 <li><code>git add &lt;file&gt;</code> to add a file to the staging area.</li>
-<li><code>git commit -m "A very descriptive message</code> to commit the files on the staging area.</li>
+<li><code>git commit -m "A very descriptive message"</code> to commit the files on the staging area.</li>
 </ul>
 </div>
 </section>
@@ -282,6 +282,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.name <span class="st">'Jane Doe'</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.email <span class="st">'jane@example.com'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<div class="alert alert-dismissible alert-primary">
+<p>You can also configure git from the command line:</p>
+<ul>
+<li><code>git config --global user.name "Your Name"</code> to configure your name, it can be anything but remember that it’s public.</li>
+<li><code>git config --global user.email youremail@example.com</code> to add your email (the same you used for the GitHub account).</li>
+</ul>
+</div>
 </section>
 <section id="creating-a-new-repository" class="level2">
 <h2 class="anchored" data-anchor-id="creating-a-new-repository">Creating a new repository</h2>
@@ -313,6 +320,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <p>The new folder in your computer will be a git repository, linked to a remote GitHub repository and an RStudio Project at the same time. This workflow also makes sure that all the configuration between the local and remote repos are done correctly.</p>
 <p>It also adds a <code>.gitignore</code> file that includes a list of files that we don’t need to track (i.e.&nbsp;<code>.Rhistory</code>).</p>
+<div class="alert alert-dismissible alert-primary">
+<p>Create a new repository from command line:</p>
+<p>If you already have a repote repository:</p>
+<ul>
+<li><code>git clone &lt;repo url&gt;</code></li>
+</ul>
+<p>If you want to start a local repository from scratch in the folder you are located:</p>
+<ul>
+<li><code>git init</code></li>
+</ul>
+</div>
 </section>
 <section id="local-changes" class="level2">
 <h2 class="anchored" data-anchor-id="local-changes">Local changes</h2>
