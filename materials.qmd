@@ -7,16 +7,18 @@ editor: visual
 
 Do you have something like this in your computer?
 
-    /home/pao/Documents/thesis
-    ├── abstract.R
-    ├── thesis.Rmd
-    ├── thesis_reviwed.Rmd
-    ├── thesis_reviwed2.Rmd
-    ├── thesis_final.Rmd
-    ├── thesis_finalfinal.Rmd
-    ├── this_is_it.Rmd
-    ├── now_this_is_it_for_real_this_time_i_swear.Rmd
-    └── FINAL.Rmd
+```         
+/home/pao/Documents/thesis
+├── abstract.R
+├── thesis.Rmd
+├── thesis_reviwed.Rmd
+├── thesis_reviwed2.Rmd
+├── thesis_final.Rmd
+├── thesis_finalfinal.Rmd
+├── this_is_it.Rmd
+├── now_this_is_it_for_real_this_time_i_swear.Rmd
+└── FINAL.Rmd
+```
 
 Probably we all have, or had something like this at one point because we didn't use a version control system. Version control systems manage the evolution and changes of a set of files that we'll call **repository**. If you ever looked at the history of a Google Docs file, it is like that but in a very controlled way. Git is one popular version control system.
 
@@ -26,7 +28,7 @@ If you work as a team you can take advantage of all the above and also use versi
 
 ## But what we mean by version control?
 
-Let's imagine that we have a repository already working ([later](/reproducibility-with-r/materials/day2/01-git/#creating-a-new-repository) we'll see how to create one). When you create a new file as part of the repository (or *repo*), that file is untracked or unversioned. This means that the git will ignore the file and any change you made until you *add* it to the repo. At that point the file is **staged** and it ready to get into the repository. To do that you do a *commit* and **save** that version of the file to the repo. This workflow `modify --> add --> commit` will repeat every time you want to save a version of the file. We don't recommend making a commit every time you save the file or change a comma, and its also not a good idea to make a commit with a billion of changes. With practice and depending on how do you work, you will find a comfortable middle ground.
+Let's imagine that we have a repository already working ([later](/reproducibility-with-r/materials/day2/01-git/#creating-a-new-repository) we'll see how to create one). When you create a new file as part of the repository (or *repo*), that file is **untracked** or **unversioned**. This means that git will ignore the file and any change you made until you *add* it to the repo. At that point the file is **staged** and it ready to get into the repository. To do that you do a *commit* and **save** that version of the file to the repo. This workflow `modify --> add --> commit` will repeat every time you want to save a version of the file. We don't recommend making a commit every time you save the file or change a comma, and its also not a good idea to make a commit with a billion of changes. With practice and depending on how do you work, you will find a comfortable middle ground.
 
 ![The figure shows the states of a file: untracked or tracked. When it is tracked by the repository, the file can be staged, committed or modified. With the add action the file is "staged", with the commit action the file is "saved" to the repository. This cycles repeats teach time the file is modified.](images/file_cycle2.png)
 
@@ -43,9 +45,9 @@ If you want to try the command line, here are the core git commands:
 
 Yes, before we went through a **local workflow**. The repo lives in your computer and that's it. But, you can also connect the **local repository** with a **remote repository**. For this workshop we are going to use [GitHub](https://www.github.com) to host remote repositories, but there are other options you can explore, such as [GitLab](https://about.gitlab.com/).
 
-Let's imagine we have a local repository, we made some commits and we want to send those changes to the remote repository (we'll see how to create the remote repository later). For that we **push** the commits to the remote repository and the two repos are "up to date".
+Let's imagine we have a local repository, we made some commits and we want to send those changes to the remote repository (we'll see how to create the remote repository later). For that we **push** the commits to the remote repository and then, the two repos are "up to date".
 
-A team mate makes a change to a file and push it to the remote repository. Now, your local repo is "outdated" and you need to download those new commits from the remote repository. You **pull** the commits.
+Later, a team mate makes a change to a file in their local repo and push it to the remote repository. Now, your local repo is "outdated" and you need to download those new commits from the remote repository to your computer. You **pull** the commits.
 
 ![Concept model of a workflow using RStudio projects and git. Files are added to the staging area, and then commited to the local repository. You can push commits to the remote repository and pull new commits to your computer.](images/local_remote.png)
 
@@ -85,19 +87,12 @@ git config --global user.email 'jane@example.com'
 ```
 :::
 
-::: {.alert .alert-dismissible .alert-primary}
-You can also configure git from the command line:
-
--   `git config --global user.name "Your Name"` to configure your name, it can be anything but remember that it's public.
--   `git config --global user.email youremail@example.com` to add your email (the same you used for the GitHub account).
-:::
-
 ## Creating a new repository
 
 There are many ways to start a new repository, locally in your computer using the command line or an interface, from GitHub (or its friends), from RStudio! Here we'll show you how to create a repo from GitHub, associate it to an RStudio project and work with it. But keep in mind that there are many other ways of working with git.
 
 ::: {.alert .alert-dismissible .alert-light}
-### 1.  Create an online repository.
+### 1. Create an online repository.
 
 -   Go to [github.com](https://github.com) and log in.
 -   On the top right corner, click on the "+" bottom and then "New repository"
@@ -114,7 +109,7 @@ Before going back to RStudio, copy the url for the repository. For example `http
 :::
 
 ::: {.alert .alert-dismissible .alert-light}
-### 2.  In RStudio, start a new Project:
+### 2. In RStudio, start a new Project:
 
 -   `File > New Project > Version Control > Git`. In the "repository URL" paste the URL of your new GitHub repository `https://github.com/paocorrales/myrepo.git`.
 -   Choose the folder where you want to create the project.
@@ -142,9 +137,7 @@ If you want to start a local repository from scratch in the folder you are locat
 
 It's time to put into practice some of the thing we've been talking.
 
-
 ::: {.alert .alert-dismissible .alert-light}
-
 ### Add, commit
 
 1.  Create a new RMarkdown file and save it.
@@ -157,20 +150,15 @@ It's time to put into practice some of the thing we've been talking.
 ![Git panel with 3 tracked files added to the staging area.](images/add2.png)
 
 ![RStudio interface to see file differences, write message's commit and push it to the remote repository.](images/add3.png)
-
 :::
 
-
-
-If everything went OK, you started tracking files, made changes, committed them to the local repository. You may see a message on the git tab saying that the local repo is ahead of the remote repo by 2 commits.
+If everything went OK, you started tracking files, made changes, committed them to the local repository. You may see a message on the git tab saying that the local repo is ahead of the remote repo by 2 commits. You won't see any changes on GitHub until you push those commits. You can do this at the end of the day if you prefer but if you work with others it may be a good idea to push everything after you do each commit.
 
 ::: {.alert .alert-dismissible .alert-light}
 ### Push!
 
 1.  Now, push the commits to the remote repository.
 :::
-
-You won't see any changes on GitHub until you push those commits. You can do this at the end of the day if you prefer but if you work with others it may be a good idea to push everything after you do each commit.
 
 ## Remote changes
 
@@ -183,7 +171,7 @@ Now, we can try to make changes here.
 
 1.  On the main page, click on the green bottom that says "Add a README".
 2.  Add something to the file. READMEs usually are written in Markdown and contain information about the repo.
-3.  At the end of the page add a message on the first line and click on "Commit new file".
+3.  At the end of the page add a message on the first line and click on "Commit changes...".
 4.  Come back to the main page to see the README.
 :::
 
@@ -224,7 +212,7 @@ When collaborating on a project you can find yourself in one of two scenarios
 
 The first situation is the most common when working together with an team on a long term project. You can clone the repo following the [these same instructions](/reproducibility-with-r/materials/day2/01-git/#creating-a-new-repository) and use the same workflow as before. When you try to push your changes to the remote repository, GitHub will check if you have the rights to modify the repo. The only difference between this and working on your own is that you need to communicate well so that two people are not working on the same thing. But this is true with or without git.
 
-The second situation is common when contributing to strangers' projects, such as fixing bugs in open source packages. In this case, you need to first *fork* the repository, which creates a remote repository linked to your GitHub account to which you will have complete access. Now you work in this fork using the normal workflow: modify, add, commit and push. But for your changes to integrate into the original repository, you need to create a *pull request* (or *PR*). This will let the owner of the original repo that you made some changes that you think should be merged. The owner can then accept, reject or ask for modifications. Once they accept your Pull Request, your modifications will be safe in the original repository.
+The second situation is common when contributing to strangers' projects, such as fixing bugs in open source packages. In this case, you need to first *fork* the repository, which creates a remote repository linked to your GitHub account to which you will have complete access. Now you work in this fork using the normal workflow: modify, add, commit and push. But for your changes to be integrated into the original repository, you need to create a *pull request* (or *PR*). This will let the owner of the original repo know that you made some changes that you think should be merged. The owner can then accept, reject or ask for modifications. Once they accept your pull request, your modifications will be safe in the original repository.
 
 ![Concep model of the remote workflow. A foreign remote repository can be forked to an owned remote repository with a "fork". The remote repository is copied into a local repository with a "clone". Files inside the local repository and the remote repository are synced with push and pull. The owned remote repository can be merged into the foreign remote repository with a pull request.](images/pull-request.png)
 
@@ -287,7 +275,7 @@ If you want to contribute the changes you made to the original repo, it's time t
 
 ![Screenshot of GitHub showing how to add a title, message and finish a pull request](images/pr2.png)
 
-And that it!
+And that's it!
 :::
 
 The owner/s of the repo will receive an email. They can review the pull request, comment on it and eventually accept the contribution. When that happen the changes you made will apear in the repo.
