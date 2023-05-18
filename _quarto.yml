@@ -4,7 +4,6 @@ project:
 
 website:
   title: "Developing Software Together"
-  lang: es
   navbar:
     left:
       - href: index.qmd
@@ -13,8 +12,12 @@ website:
         text: "Preparation"
       - href: presentation.qmd
         text: "Let's beging!"
-      - href: materials.qmd
-        text: "Materiales"
+      - text: "Materiales"
+        menu:
+          - href: materials.qmd
+            text: "Working with RStudio"
+          - href: materials_command_line.qmd
+            text: "Working from the command line"
 
 format:
   html:
