@@ -14,10 +14,10 @@ The core steps are:
 2.  Create a GitHub account.\
     Go to [github.com](github.com) and create your free account.
 
-3.  Set up git so it can work with GitHUb and RStudio.\
+3.  Set up git so it can work with GitHUb.\
     This can be, unfortunately, a rather involved process so be patient.
     Again, the excellent Happy Git with R is your friend.
-    Follow the instructions in [this chapter](https://happygitwithr.com/https-pat.html) to set up your GitHub Personal Access Token.\
+    Follow the instructions in [this chapter](https://happygitwithr.com/https-pat.html) to set up your GitHub Personal Access Token (from R or RStudio).\
     If you are on linux, we highly recommend [this post by Danielle Navarro](https://blog.djnavarro.net/posts/2021-08-08_git-credential-helpers/).
     It covers some of the same territory with more detail, and it can be cathartic to read someone who shares your pain.
 
