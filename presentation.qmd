@@ -50,7 +50,7 @@ knitr::include_graphics("images/yani_circle.png")
 -   Why using git
 -   How to use git (and GitHub)
 -   How to work git in the context of writing R code
--   How to colaborate with others
+-   How to collaborate with others
 :::
 
 ::: {.column width="60%"}
