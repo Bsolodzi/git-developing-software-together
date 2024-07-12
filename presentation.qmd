@@ -5,7 +5,7 @@ format:
   revealjs:
     theme: default
     self-contained: true
-    fontsize: "14.5pt"
+    fontsize: "18.5pt"
 ---
 
 ## Hi and welcome!
@@ -186,7 +186,7 @@ You can run the code if you want :)
 
 1.  Go to your repo in GitHub, you will see that you made the last commit and a message like this:
 
-![](images/pr1.png)
+![](images/pr1.png){fig-align="center" width="783"}
 
 2.  Click on "Open pull request".
 3.  And click on "Create pull request".
