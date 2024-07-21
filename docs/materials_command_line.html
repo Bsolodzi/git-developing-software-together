@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.45">
+<meta name="generator" content="quarto-1.5.47">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -187,8 +187,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#collaborating-with-others" id="toc-collaborating-with-others" class="nav-link" data-scroll-target="#collaborating-with-others">Collaborating with others</a>
   <ul class="collapse">
   <li><a href="#lets-plant-some-trees" id="toc-lets-plant-some-trees" class="nav-link" data-scroll-target="#lets-plant-some-trees">Let’s plant some trees</a></li>
-  <li><a href="#fork-the-repository" id="toc-fork-the-repository" class="nav-link" data-scroll-target="#fork-the-repository">Fork the repository</a></li>
-  <li><a href="#make-a-change-in-the-repo" id="toc-make-a-change-in-the-repo" class="nav-link" data-scroll-target="#make-a-change-in-the-repo">Make a change in the repo</a></li>
   <li><a href="#make-a-pull-request" id="toc-make-a-pull-request" class="nav-link" data-scroll-target="#make-a-pull-request">Make a pull request</a></li>
   </ul></li>
   <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources">Resources</a></li>
@@ -230,20 +228,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 ├── this_is_it.Rmd
 ├── now_this_is_it_for_real_this_time_i_swear.Rmd
 └── FINAL.Rmd</code></pre>
-<p>Probably we all have, or had something like this at one point because we didn’t use a version control system. Version control systems manage the evolution and changes of a set of files that we’ll call <strong>repository</strong>. If you ever looked at the history of a Google Docs file, it is like that but in a very controlled way. Git is one popular version control system.</p>
+<p>Probably we all have, or had something like this at one point because we need to save our owrk but still have access to previous versions. There is a solution for this. Version control systems manage the evolution and changes of a set of files that we’ll call <strong>repository</strong>. If you ever looked at the history of a Google Docs file, it is like that but in a very controlled way. Git is one popular version control system but there are others.</p>
 <p>If you work alone, git is great to track changes and recover previous version of your files. You can also use a <strong>remote repository</strong> (more later) to have a back up and share your work.</p>
-<p>If you work as a team you can take advantage of all the above and also use version control as a tool to collaborate and organize the various versions of the same file present in the multiple computers you and they use.</p>
+<p>If you work as a team you can take advantage of all the above and also use version control as a tool to collaborate and organise the various versions of the same file present in the multiple computers you and they use.</p>
 </section>
 <section id="but-what-we-mean-by-version-control" class="level2">
 <h2 class="anchored" data-anchor-id="but-what-we-mean-by-version-control">But what we mean by version control?</h2>
-<p>Let’s imagine that we have a repository already working (<a href="./reproducibility-with-r/materials/day2/01-git/#creating-a-new-repository">later</a> we’ll see how to create one). When you create a new file as part of the repository (or <em>repo</em>), that file is <strong>untracked</strong> or <strong>unversioned</strong>. This means that git will ignore the file and any change you made until you <em>add</em> it to the repo. At that point the file is <strong>staged</strong> and it ready to get into the repository. To do that you do a <em>commit</em> and <strong>save</strong> that version of the file to the repo. This workflow <code>modify then add then commit</code> will repeat every time you want to save a version of the file. We don’t recommend making a commit every time you save the file or change a comma, and its also not a good idea to make a commit with a billion of changes. With practice and depending on how do you work, you will find a comfortable middle ground.</p>
+<p>Let’s imagine that we have a repository already working (<a href=".\reproducibility-with-r/materials/day2/01-git/#creating-a-new-repository">later</a> we’ll see how to create one). When you create a new file as part of the repository (or <em>repo</em>), that file is <strong>untracked</strong> or <strong>unversioned</strong>. This means that git will ignore the file and any change you made until you <em>add</em> it to the repo and start traking it changes. At that point the file is <strong>staged</strong> and it ready to get into the repository. To do that you do a <em>commit</em> and <strong>save</strong> that version of the file to the repo. This workflow <code>modify then add then commit</code> will repeat every time you want to save a version of the file. We don’t recommend making a commit every time you save the file or change a comma, and its also not a good idea to make a commit with a billion of changes. With practice and depending on how do you work, you will find a comfortable middle ground.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/file_cycle2.png" class="img-fluid figure-img"></p>
 <figcaption>The figure shows the states of a file: untracked or tracked. When it is tracked by the repository, the file can be staged, committed or modified. With the add action the file is “staged”, with the commit action the file is “saved” to the repository. This cycles repeats teach time the file is modified.</figcaption>
 </figure>
 </div>
-<p>So, we mentioned <code>add</code> and <code>commit</code>, these are git commands. If you have experience working with the command line you could use git from there, but the same commands can be executed from a GUI like <a href="https://desktop.github.com/">GitHub Desktop</a> or <a href="https://www.gitkraken.com/">GitKraken</a>. For this version of the materials we’ll use the git commands and the command line or Terminal.</p>
+<p>So, we mentioned <code>add</code> and <code>commit</code>, these are git commands. If you have experience working with the command line you could use git from there, add the same commands can be executed from a GUI like <a href="https://desktop.github.com/">GitHub Desktop</a> or <a href="https://www.gitkraken.com/">GitKraken</a>. For this version of the materials we’ll use the git commands and the command line or Terminal.</p>
 <div class="alert alert-dismissible alert-primary">
 <p>The core git commands are:</p>
 <ul>
@@ -255,9 +253,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="did-i-mentioned-remote-repository" class="level2">
 <h2 class="anchored" data-anchor-id="did-i-mentioned-remote-repository">Did I mentioned remote repository?</h2>
-<p>Yes, before we went through a <strong>local workflow</strong>. The repo lives in your computer and that’s it. But, you can also connect the <strong>local repository</strong> with a <strong>remote repository</strong>. For this workshop we are going to use <a href="https://www.github.com">GitHub</a> to host remote repositories, but there are other options you can explore, such as <a href="https://about.gitlab.com/">GitLab</a>.</p>
-<p>Let’s imagine we have a local repository, we made some commits and we want to send those changes to the remote repository (we’ll see how to create the remote repository later). For that we <strong>push</strong> the commits to the remote repository and then, the two repos are “up to date”.</p>
-<p>Later, a team mate makes a change to a file in their local repo and push it to the remote repository. Now, your local repo is “outdated” and you need to download those new commits from the remote repository to your computer. You <strong>pull</strong> the commits.</p>
+<p>Yes, before we went through a <strong>local workflow</strong>. The repo (a hidden folder called <code>.git</code>) lives in your computer and that’s it. But, you can also connect the <strong>local repository</strong> with a <strong>remote repository</strong>. For this workshop we are going to use <a href="https://www.github.com">GitHub</a> to host remote repositories, but there are other options you can explore, such as <a href="https://about.gitlab.com/">GitLab</a>.</p>
+<p>Let’s imagine we have a local repository, we made some commits and we want to send those changes to the remote repository (we’ll see how to create the remote repository later). For that we <strong>push</strong> the commits to the remote repository and then, the two repos are “up to date”, they have the same version of the files.</p>
+<p>Later, a colleague makes a change to a file in their local repo and push it to the remote repository. Now, your local repo is “outdated” and you need to download those new commits from the remote repository to your computer. You <strong>pull</strong> the commits.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/local_remote.png" class="img-fluid figure-img"></p>
@@ -275,7 +273,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="introduce-yourself-to-git" class="level2">
 <h2 class="anchored" data-anchor-id="introduce-yourself-to-git">Introduce yourself to Git</h2>
-<p>Before you create your first repository you need to make sure that git knows you. If you follow the <a href="preparation.html">pre-workshop instructions</a>, you have git installed in your computare and you own a GitHub account.</p>
+<p>Before you create your first repository you need to make sure that git knows you. If you follow the <a href="preparation.html">pre-workshop instructions</a>, you have git installed in your computer and you own a GitHub account.</p>
 <p>To introduce yourself to git, that is to let it know your name and email you can use the command line package.</p>
 <div class="alert alert-dismissible alert-primary">
 <div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.name <span class="st">'Jane Doe'</span></span>
@@ -313,11 +311,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 <p>You may get a warning saying: “warning: You appear to have cloned an empty repository.”. Don’t worry about that. We’ll create a file soon.</p>
 </section>
-<p>The new folder in your computer will be a git repository, linked to a remote GitHub repository. There you can work, for example with an RStudio Project. This workflow also makes sure that all the configuration between the local and remote repos are done correctly.</p>
-<p>In this case it won’t add a <code>.gitignore</code> file. You may want to add one in the future, as this file includes a list of files that we don’t need to track (i.e.&nbsp;<code>.Rhistory</code>).</p>
+<p>The new folder in your computer will be a git repository, linked to a remote GitHub repository. This workflow also makes sure that all the configuration between the local and remote repos are done correctly.</p>
+<p>In this case it won’t add a <code>.gitignore</code> file. You may want to add one in the future, as this file includes a list of files that we don’t need to track (like big data files).</p>
 <div class="alert alert-dismissible alert-primary">
 <p>Again, these are the key commands:</p>
-<p>If you already have a repote repository:</p>
+<p>If you already have a remote repository:</p>
 <ul>
 <li><code>git clone &lt;repo url&gt;</code></li>
 </ul>
@@ -334,8 +332,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="add-commit">Add, commit</h3>
 <ol type="1">
 <li>Create a new file and save it. It can be any type of file.</li>
-<li>Check the status of the files in the repository with <code>git status</code>. The file you’ve just created will be unther “Untracked files”</li>
-<li>Add the to the staging area with <code>git add &lt;file name&gt;</code>. You can check the status of the repo again to see what changed.</li>
+<li>Check the status of the files in the repository with <code>git status</code>. The file you’ve just created will be under “Untracked files”</li>
+<li>Add the file to the staging area with <code>git add &lt;file name&gt;</code>. You can check the status of the repo again to see what changed.</li>
 <li>Commit the file with <code>git commit -m &lt;message&gt;</code>. You’ll need to add a descriptive message!</li>
 <li>Check the status of the repo again.</li>
 </ol>
@@ -347,23 +345,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ol type="1">
 <li>Now, push the commits to the remote repository with <code>git push</code>.</li>
 </ol>
-<p>Because is the first time you push commits to the remote repository, git will automaticaly create a new branch. We won’t worry about branch for now.</p>
+<p>Because is the first time you push commits to the remote repository, git will automatically create a new branch. We won’t worry about branches for now.</p>
 </section>
 </section>
 <section id="remote-changes" class="level2">
 <h2 class="anchored" data-anchor-id="remote-changes">Remote changes</h2>
-<p>Let’s come back to GitHub. If you refresh the page, now you’ll see the files you committed just now. If you navigate to the “commit” or “commits” link you can access the the history of the repository. From this view, you can explore the repository at the “state” of each commit and look at the file differences. Let’s return to the previws page.</p>
+<p>Let’s come back to GitHub. If you refresh the page, the repo will include the files you committed just now. If you navigate to the “commit” or “commits” link you can access the the history of the repository. From this view, you can explore the repository at the “state” of each commit and look at the file differences. Let’s return to the previews page.</p>
 <p>From the main page of the repository, we can try to make changes to the files.</p>
 <section id="create-a-readme" class="level3 alert alert-dismissible alert-light">
 <h3 class="anchored" data-anchor-id="create-a-readme">Create a README</h3>
 <ol type="1">
-<li>On the main page, navigate to the bottom that says “Add a README”.</li>
+<li>On the main page, navigate to the bottom that says “Add a README” (this options only apears when there is no README in ther repo.</li>
 <li>Don’t change the name of the file.</li>
 <li>Add something to the content of the file. READMEs usually are written in Markdown and contain information about the repo.</li>
 <li>Navigate to the “Commit changes…” button to save and commit the file.</li>
 <li>Add a message.</li>
 <li>Navigate to the “commit file” button.</li>
-<li>Come back to the main page to see the README.</li>
+<li>Come back to the main page, now it will show the content of the README.</li>
 </ol>
 </section>
 <p>The new file and the changes you do on GitHub are only on the remote repository until you make a pull from the local repo. If you make changes on the local repo while it not up to date, you may encounter merge conflicts, which lead to headaches. This happens when the version of a file on the local repo is not compatible with its version on the remote repo. In those cases, git cannot decide which version is the right one and you have to do it yourself.</p>
@@ -375,7 +373,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Type <code>git pull</code>.</li>
 <li>Git will download the new changes from GitHub and tell you how many files were changed.</li>
 </ol>
-<p>Now both repositories are sincronized.</p>
+<p>Now both repositories are sincronised.</p>
 </section>
 </section>
 <section id="anatomy-of-github-repo" class="level2">
@@ -399,7 +397,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>You have write permission of the repo you are working on.</li>
 <li>You don’t have write permission on the repo.</li>
 </ul>
-<p>The first situation is the most common when working together with an team on a long term project. You can clone the repo following the <a href="./reproducibility-with-r/materials/day2/01-git/#creating-a-new-repository">these same instructions</a> and use the same workflow as before. When you try to push your changes to the remote repository, GitHub will check if you have the rights to modify the repo. The only difference between this and working on your own is that you need to communicate well so that two people are not working on the same thing. But this is true with or without git.</p>
+<p>The first situation is the most common when working together with an team on a long term project. You can clone the repo following the <a href=".\reproducibility-with-r/materials/day2/01-git/#creating-a-new-repository">these same instructions</a> and use the same workflow as before. When you try to push your changes to the remote repository, GitHub will check if you have the rights to modify the repo. The only difference between this and working on your own is that you need to communicate well so that two people are not working on the same thing. But this is true with or without git. Sometimes, each person would work on it own branch to avoid breaking something. You can read more about branches on <a href="https://happygitwithr.com/git-branches">Chapter 22 in Happy git with R</a>.</p>
 <p>The second situation is common when contributing to strangers’ projects, such as fixing bugs in open source packages. In this case, you need to first <em>fork</em> the repository, which creates a remote repository linked to your GitHub account to which you will have complete access. Now you work in this fork using the normal workflow: modify, add, commit and push. But for your changes to be integrated into the original repository, you need to create a <em>pull request</em> (or <em>PR</em>). This will let the owner of the original repo know that you made some changes that you think should be merged. The owner can then accept, reject or ask for modifications. Once they accept your pull request, your modifications will be safe in the original repository.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -410,41 +408,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="lets-plant-some-trees" class="level3">
 <h3 class="anchored" data-anchor-id="lets-plant-some-trees">Let’s plant some trees</h3>
 <p>As a fun example will collaborate with the recently open Flametree galley and do some pull request on the way.</p>
+<p>For this example we’ll keep working from the Terminal instead of using the GitHub web interface. To do that we need GitHub cli, a command-line interface to GitHub. You can find instructions on <a href="preparation.html">how to download GitHub cli in the preparation section</a>.</p>
 </section>
-<section id="fork-the-repository" class="level3 alert alert-dismissible alert-light">
+<div class="alert alert-dismissible alert-light">
+<section id="fork-the-repository" class="level3">
 <h3 class="anchored" data-anchor-id="fork-the-repository">Fork the repository</h3>
 <ol type="1">
-<li>Go to <a href="https://github.com/paocorrales/flametree_gallery">github.com/paocorrales/flametree_gallery</a></li>
-<li>Fork the repository navigating to the “Fork” button on the top of the page.</li>
-<li>You don’t need to change the information.</li>
-<li>Navigate to the “Create fork” button to create a copy of the repo in you GitHub account.</li>
+<li>Go to <a href="https://github.com/paocorrales/flametree_gallery">github.com/paocorrales/flametree_gallery</a> and copy the url to the repo, you’ll need it to fork the repo.</li>
+<li>Go to the directory you want to save the new repository.</li>
+<li>On the Terminal run: <code>gh repo fork https://github.com/paocorrales/flametree_gallery.git</code></li>
 </ol>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/fork.png" class="img-fluid figure-img"></p>
-<figcaption>Screenshot of a repository showing where the “fork” button is.</figcaption>
-</figure>
-</div>
-<p>Now, you have a copy of the repo in your GitHub account.</p>
-<ol start="3" type="1">
-<li>Copy the url of the repo and clone it to your computer following the <a href="./reproducibility-with-r/materials/day2/01-git/#creating-a-new-repository">instructions to create a new repo.</a></li>
-</ol>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/clone.png" class="img-fluid figure-img"></p>
-<figcaption>Screenshot of a forked repo showing where to copy the url to clone the repo.</figcaption>
-</figure>
-</div>
-</section>
-<p>Now you have an RStudio project (that is also a repo) that is a copy of the one in the original repo. It’s a very small project with a few file. <code>template_script.R</code> includes the necessary code to create beautiful images of trees from R code:</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/tree_pao.png" class="img-fluid figure-img"></p>
-<figcaption>Image of trees created using R</figcaption>
-</figure>
-</div>
+<p>The Terminal will clone the fork into your computer and return:</p>
+<p>`<code>* [new branch]      main       -&gt; upstream/main ✓ Cloned fork ! Repository paocorrales/flametree_gallery set as the default repository. To learn more about the default repository, run: gh repo set-default --help`</code></p>
+<p>Now, you have a copy of the repo in your GitHub account and in your computer. Everything is ready to star working as before.</p>
+<p>This repository is a copy of the one in the original repo. It’s a very small project with a few file. <code>template_script.R</code> includes the necessary code to create beautiful images of trees from R code (you can ignore the rest of the files).</p>
 <p>It uses the <a href="https://github.com/djnavarro/flametree"><em>flametree</em></a> library created by <a href="https://djnavarro.net/">Danielle Navarro</a>. How it works is not part of the topics of the workshop (sadly!) but it’s a good excuse to practice doing pull requests.</p>
-<section id="make-a-change-in-the-repo" class="level3 alert alert-dismissible alert-light">
+</section>
+<section id="make-a-change-in-the-repo" class="level3">
 <h3 class="anchored" data-anchor-id="make-a-change-in-the-repo">Make a change in the repo</h3>
 <ol type="1">
 <li><p>Make a copy of the <code>template_script.R</code> file and change it’s name to <code>&lt;your-name.R&gt;</code></p></li>
@@ -454,41 +434,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><code>seed</code> there are some random things happening there.</li>
 <li><code>shades</code> choose 4 colors.</li>
 </ul></li>
-</ol>
-<p>You can run the code if you want.</p>
-<ol start="3" type="1">
-<li>Save the file, <strong>add</strong> it to the staging area and <strong>commit</strong> it (<em>include only the .R file you created</em>).</li>
-<li>Push it to your remote repository.</li>
+<li><p>Save the file, <strong>add</strong> it to the staging area and <strong>commit</strong> it (<em>include only the .R file you created</em>).</p></li>
+<li><p>Push it to your remote repository.</p></li>
 </ol>
 </section>
+</div>
 <p>At this point you’ve made a change in your local repo (that is a copy of the forked repo) and pushed those changes to your remote repo in GitHub. The original repo doesn’t know this.</p>
 <p>If you want to contribute the changes you made to the original repo, it’s time to make a pull request.</p>
 <section id="make-a-pull-request" class="level3 alert alert-dismissible alert-light">
 <h3 class="anchored" data-anchor-id="make-a-pull-request">Make a pull request</h3>
 <ol type="1">
-<li>Go to your repo in GitHub, you will see that you made the last commit.</li>
+<li>From the terminal run <code>gh pr create --title "Pull request title" --body "Pull request body"</code>, add a title and a message in the body of the pull request. The Terminal will return the link to the pr in the web. It’s useful to remember the number.</li>
+<li>You can also add comments after opening the pull request with <code>gh pr comment &lt;number of pr&gt; --body "Some comment"</code></li>
 </ol>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/pr1.png" class="img-fluid figure-img"></p>
-<figcaption>Screenshot of a forked repo in GitHub with a new commit. It shows how to star a new pull request.</figcaption>
-</figure>
-</div>
-<ol start="2" type="1">
-<li>Navigate to the “Contribute” button.</li>
-<li>And then to “Open pull request”.</li>
-<li>We are almost there. In this page you can change the title of the pull request and write a message for the owner of the original repo.</li>
-<li>Navigate to “Create pull request” button and press enter to finish the pull request.</li>
-</ol>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/pr2.png" class="img-fluid figure-img"></p>
-<figcaption>Screenshot of GitHub showing how to add a title, message and finish a pull request</figcaption>
-</figure>
-</div>
 <p>And that’s it!</p>
 </section>
-<p>The owner/s of the repo will receive an email. They can review the pull request, comment on it and eventually accept the contribution. When that happen the changes you made will apear in the repo.</p>
+<p>The owner/s of the repo will receive an email. They can review the pull request, comment on it and eventually accept the contribution. When that happen the changes you made will appear in the repo.</p>
+<p>The <a href="https://cli.github.com/manual/gh_pr">list of GitHub commands to work with pull request</a> is long!</p>
 </section>
 <section id="resources" class="level2">
 <h2 class="anchored" data-anchor-id="resources">Resources</h2>
