@@ -20,19 +20,19 @@ Do you have something like this in your computer?
 └── FINAL.Rmd
 ```
 
-Probably we all have, or had something like this at one point because we didn't use a version control system. Version control systems manage the evolution and changes of a set of files that we'll call **repository**. If you ever looked at the history of a Google Docs file, it is like that but in a very controlled way. Git is one popular version control system.
+Probably we all have, or had something like this at one point because we need to save our owrk but still have access to previous versions. There is a solution for this. Version control systems manage the evolution and changes of a set of files that we'll call **repository**. If you ever looked at the history of a Google Docs file, it is like that but in a very controlled way. Git is one popular version control system but there are others.
 
 If you work alone, git is great to track changes and recover previous version of your files. You can also use a **remote repository** (more later) to have a back up and share your work.
 
-If you work as a team you can take advantage of all the above and also use version control as a tool to collaborate and organize the various versions of the same file present in the multiple computers you and they use.
+If you work as a team you can take advantage of all the above and also use version control as a tool to collaborate and organise the various versions of the same file present in the multiple computers you and they use.
 
 ## But what we mean by version control?
 
-Let's imagine that we have a repository already working ([later](/reproducibility-with-r/materials/day2/01-git/#creating-a-new-repository) we'll see how to create one). When you create a new file as part of the repository (or *repo*), that file is **untracked** or **unversioned**. This means that git will ignore the file and any change you made until you *add* it to the repo. At that point the file is **staged** and it ready to get into the repository. To do that you do a *commit* and **save** that version of the file to the repo. This workflow `modify then add then commit` will repeat every time you want to save a version of the file. We don't recommend making a commit every time you save the file or change a comma, and its also not a good idea to make a commit with a billion of changes. With practice and depending on how do you work, you will find a comfortable middle ground.
+Let's imagine that we have a repository already working ([later](/reproducibility-with-r/materials/day2/01-git/#creating-a-new-repository) we'll see how to create one). When you create a new file as part of the repository (or *repo*), that file is **untracked** or **unversioned**. This means that git will ignore the file and any change you made until you *add* it to the repo and start traking it changes. At that point the file is **staged** and it ready to get into the repository. To do that you do a *commit* and **save** that version of the file to the repo. This workflow `modify then add then commit` will repeat every time you want to save a version of the file. We don't recommend making a commit every time you save the file or change a comma, and its also not a good idea to make a commit with a billion of changes. With practice and depending on how do you work, you will find a comfortable middle ground.
 
 ![The figure shows the states of a file: untracked or tracked. When it is tracked by the repository, the file can be staged, committed or modified. With the add action the file is "staged", with the commit action the file is "saved" to the repository. This cycles repeats teach time the file is modified.](images/file_cycle2.png)
 
-So, we mentioned `add` and `commit`, these are git commands. If you have experience working with the command line you could use git from there, but the same commands can be executed from a GUI like [GitHub Desktop](https://desktop.github.com/) or [GitKraken](https://www.gitkraken.com/). For this version of the materials we'll use the git commands and the command line or Terminal.
+So, we mentioned `add` and `commit`, these are git commands. If you have experience working with the command line you could use git from there, add the same commands can be executed from a GUI like [GitHub Desktop](https://desktop.github.com/) or [GitKraken](https://www.gitkraken.com/). For this version of the materials we'll use the git commands and the command line or Terminal.
 
 ::: {.alert .alert-dismissible .alert-primary}
 The core git commands are:
@@ -44,11 +44,11 @@ The core git commands are:
 
 ## Did I mentioned remote repository?
 
-Yes, before we went through a **local workflow**. The repo lives in your computer and that's it. But, you can also connect the **local repository** with a **remote repository**. For this workshop we are going to use [GitHub](https://www.github.com) to host remote repositories, but there are other options you can explore, such as [GitLab](https://about.gitlab.com/).
+Yes, before we went through a **local workflow**. The repo (a hidden folder called `.git`) lives in your computer and that's it. But, you can also connect the **local repository** with a **remote repository**. For this workshop we are going to use [GitHub](https://www.github.com) to host remote repositories, but there are other options you can explore, such as [GitLab](https://about.gitlab.com/).
 
-Let's imagine we have a local repository, we made some commits and we want to send those changes to the remote repository (we'll see how to create the remote repository later). For that we **push** the commits to the remote repository and then, the two repos are "up to date".
+Let's imagine we have a local repository, we made some commits and we want to send those changes to the remote repository (we'll see how to create the remote repository later). For that we **push** the commits to the remote repository and then, the two repos are "up to date", they have the same version of the files.
 
-Later, a team mate makes a change to a file in their local repo and push it to the remote repository. Now, your local repo is "outdated" and you need to download those new commits from the remote repository to your computer. You **pull** the commits.
+Later, a colleague makes a change to a file in their local repo and push it to the remote repository. Now, your local repo is "outdated" and you need to download those new commits from the remote repository to your computer. You **pull** the commits.
 
 ![Concept model of a workflow using RStudio projects and git. Files are added to the staging area, and then commited to the local repository. You can push commits to the remote repository in GitHub and pull new commits from the remote repository to your computer.](images/local_remote.png)
 
@@ -63,12 +63,11 @@ The git commands to work with a remote repository are:
 
 ## Introduce yourself to Git
 
-Before you create your first repository you need to make sure that git knows you. If you follow the [pre-workshop instructions](preparation.html), you have git installed in your computare and you own a GitHub account.
+Before you create your first repository you need to make sure that git knows you. If you follow the [pre-workshop instructions](preparation.html), you have git installed in your computer and you own a GitHub account.
 
 To introduce yourself to git, that is to let it know your name and email you can use the command line package.
 
 ::: {.alert .alert-dismissible .alert-primary}
-
 ``` bash
 git config --global user.name 'Jane Doe'
 git config --global user.email 'jane@example.com'
@@ -76,7 +75,6 @@ git config --global user.email 'jane@example.com'
 :::
 
 Substituting with your name and the email associated with your GitHub account. That's it!
-
 
 ## Creating a new repository
 
@@ -98,9 +96,9 @@ In the "Create a new repository" page navigate to complete the necesiry informat
 -   .gitignore template: None
 -   Licence: None
 
-Finaly, select the "Create Repository" button. 
+Finaly, select the "Create Repository" button.
 
-Before going back to the command line, copy the url for the repositor.  And example is `https://github.com/paocorrales/myrepo.git`
+Before going back to the command line, copy the url for the repositor. And example is `https://github.com/paocorrales/myrepo.git`
 :::
 
 ::: {.alert .alert-dismissible .alert-light}
@@ -112,14 +110,14 @@ Before going back to the command line, copy the url for the repositor.  And exam
 You may get a warning saying: "warning: You appear to have cloned an empty repository.". Don't worry about that. We'll create a file soon.
 :::
 
-The new folder in your computer will be a git repository, linked to a remote GitHub repository. There you can work, for example with an RStudio Project. This workflow also makes sure that all the configuration between the local and remote repos are done correctly.
+The new folder in your computer will be a git repository, linked to a remote GitHub repository. This workflow also makes sure that all the configuration between the local and remote repos are done correctly.
 
-In this case it won't add a `.gitignore` file. You may want to add one in the future, as this file includes a list of files that we don't need to track (i.e. `.Rhistory`).
+In this case it won't add a `.gitignore` file. You may want to add one in the future, as this file includes a list of files that we don't need to track (like big data files).
 
 ::: {.alert .alert-dismissible .alert-primary}
 Again, these are the key commands:
 
-If you already have a repote repository:
+If you already have a remote repository:
 
 -   `git clone <repo url>`
 
@@ -136,10 +134,10 @@ It's time to put into practice some of the thing we've been talking.
 ### Add, commit
 
 1.  Create a new file and save it. It can be any type of file.
-2.  Check the status of the files in the repository with `git status`. The file you've just created will be unther "Untracked files"
-3.  Add the to the staging area with `git add <file name>`. You can check the status of the repo again to see what changed. 
+2.  Check the status of the files in the repository with `git status`. The file you've just created will be under "Untracked files"
+3.  Add the file to the staging area with `git add <file name>`. You can check the status of the repo again to see what changed.
 4.  Commit the file with `git commit -m <message>`. You'll need to add a descriptive message!
-3.  Check the status of the repo again. 
+5.  Check the status of the repo again.
 
 If you have commited all the changes in the file you will get a message saying "nothing to commit, working tree clean".
 :::
@@ -151,25 +149,26 @@ If everything went OK, you started tracking files, made changes, committed them 
 
 1.  Now, push the commits to the remote repository with `git push`.
 
-Because is the first time you push commits to the remote repository, git will automaticaly create a new branch. We won't worry about branch for now.
+Because is the first time you push commits to the remote repository, git will automatically create a new branch. We won't worry about branches for now.
 :::
 
 ## Remote changes
 
-Let's come back to GitHub. If you refresh the page, now you'll see the files you committed just now. If you navigate to the "commit" or "commits" link you can access the the history of the repository. From this view, you can explore the repository at the "state" of each commit and look at the file differences. Let's return to the previws page.
+Let's come back to GitHub. If you refresh the page, the repo will include the files you committed just now. If you navigate to the "commit" or "commits" link you can access the the history of the repository. From this view, you can explore the repository at the "state" of each commit and look at the file differences. Let's return to the previews page.
 
 From the main page of the repository, we can try to make changes to the files.
 
 ::: {.alert .alert-dismissible .alert-light}
 ### Create a README
 
-1.  On the main page, navigate to the bottom that says "Add a README".
+1.  On the main page, navigate to the bottom that says "Add a README" (this options only apears when there is no README in ther repo.
 2.  Don't change the name of the file.
-2.  Add something to the content of the file. READMEs usually are written in Markdown and contain information about the repo.
-3.  Navigate to the "Commit changes..." button to save and commit the file.
-4.  Add a message.
-5.  Navigate to the "commit file" button.
-6.  Come back to the main page to see the README.
+3.  Add something to the content of the file. READMEs usually are written in Markdown and contain information about the repo.
+4.  Navigate to the "Commit changes..." button to save and commit the file.
+5.  Add a message.
+6.  Navigate to the "commit file" button.
+7.  Come back to the main page, now it will show the content of the README.
+
 :::
 
 The new file and the changes you do on GitHub are only on the remote repository until you make a pull from the local repo. If you make changes on the local repo while it not up to date, you may encounter merge conflicts, which lead to headaches. This happens when the version of a file on the local repo is not compatible with its version on the remote repo. In those cases, git cannot decide which version is the right one and you have to do it yourself.
@@ -183,7 +182,7 @@ To avoid this problem (most of the time), you should do a pull before start doin
 2.  Type `git pull`.
 3.  Git will download the new changes from GitHub and tell you how many files were changed.
 
-Now both repositories are sincronized.
+Now both repositories are sincronised.
 :::
 
 ## Anatomy of GitHub Repo
@@ -208,7 +207,7 @@ When collaborating on a project you can find yourself in one of two scenarios
 -   You have write permission of the repo you are working on.
 -   You don't have write permission on the repo.
 
-The first situation is the most common when working together with an team on a long term project. You can clone the repo following the [these same instructions](/reproducibility-with-r/materials/day2/01-git/#creating-a-new-repository) and use the same workflow as before. When you try to push your changes to the remote repository, GitHub will check if you have the rights to modify the repo. The only difference between this and working on your own is that you need to communicate well so that two people are not working on the same thing. But this is true with or without git.
+The first situation is the most common when working together with an team on a long term project. You can clone the repo following the [these same instructions](/reproducibility-with-r/materials/day2/01-git/#creating-a-new-repository) and use the same workflow as before. When you try to push your changes to the remote repository, GitHub will check if you have the rights to modify the repo. The only difference between this and working on your own is that you need to communicate well so that two people are not working on the same thing. But this is true with or without git. Sometimes, each person would work on it own branch to avoid breaking something. You can read more about branches on [Chapter 22 in Happy git with R](https://happygitwithr.com/git-branches).
 
 The second situation is common when contributing to strangers' projects, such as fixing bugs in open source packages. In this case, you need to first *fork* the repository, which creates a remote repository linked to your GitHub account to which you will have complete access. Now you work in this fork using the normal workflow: modify, add, commit and push. But for your changes to be integrated into the original repository, you need to create a *pull request* (or *PR*). This will let the owner of the original repo know that you made some changes that you think should be merged. The owner can then accept, reject or ask for modifications. Once they accept your pull request, your modifications will be safe in the original repository.
 
@@ -218,30 +217,29 @@ The second situation is common when contributing to strangers' projects, such as
 
 As a fun example will collaborate with the recently open Flametree galley and do some pull request on the way.
 
+For this example we'll keep working from the Terminal instead of using the GitHub web interface. To do that we need GitHub cli, a command-line interface to GitHub. You can find instructions on [how to download GitHub cli in the preparation section](preparation.html).
+
 ::: {.alert .alert-dismissible .alert-light}
 ### Fork the repository
 
-1.  Go to [github.com/paocorrales/flametree_gallery](https://github.com/paocorrales/flametree_gallery)
-2.  Fork the repository navigating to the "Fork" button on the top of the page.
-3.  You don't need to change the information.
-4.  Navigate to the "Create fork" button to create a copy of the repo in you GitHub account. 
+1.  Go to [github.com/paocorrales/flametree_gallery](https://github.com/paocorrales/flametree_gallery) and copy the url to the repo, you'll need it to fork the repo.
+2. Go to the directory you want to save the new repository.
+2.  On the Terminal run: ` gh repo fork https://github.com/paocorrales/flametree_gallery.git`
 
-![Screenshot of a repository showing where the "fork" button is.](images/fork.png)
+The Terminal will clone the fork into your computer and return:
 
-Now, you have a copy of the repo in your GitHub account.
+````
+ * [new branch]      main       -> upstream/main
+✓ Cloned fork
+! Repository paocorrales/flametree_gallery set as the default repository. To learn more about the default repository, run: gh repo set-default --help`
+```
 
-3.  Copy the url of the repo and clone it to your computer following the [instructions to create a new repo.](/reproducibility-with-r/materials/day2/01-git/#creating-a-new-repository)
+Now, you have a copy of the repo in your GitHub account and in your computer. Everything is ready to star working as before.
 
-![Screenshot of a forked repo showing where to copy the url to clone the repo.](images/clone.png)
-:::
-
-Now you have an RStudio project (that is also a repo) that is a copy of the one in the original repo. It's a very small project with a few file. `template_script.R` includes the necessary code to create beautiful images of trees from R code:
-
-![Image of trees created using R](images/tree_pao.png)
+This repository is a copy of the one in the original repo. It's a very small project with a few file. `template_script.R` includes the necessary code to create beautiful images of trees from R code (you can ignore the rest of the files).
 
 It uses the [*flametree*](https://github.com/djnavarro/flametree) library created by [Danielle Navarro](https://djnavarro.net/). How it works is not part of the topics of the workshop (sadly!) but it's a good excuse to practice doing pull requests.
 
-::: {.alert .alert-dismissible .alert-light}
 ### Make a change in the repo
 
 1.  Make a copy of the `template_script.R` file and change it's name to `<your-name.R>`
@@ -251,8 +249,6 @@ It uses the [*flametree*](https://github.com/djnavarro/flametree) library create
     -   `name` your name.
     -   `seed` there are some random things happening there.
     -   `shades` choose 4 colors.
-
-You can run the code if you want.
 
 3.  Save the file, **add** it to the staging area and **commit** it (*include only the .R file you created*).
 4.  Push it to your remote repository.
@@ -265,21 +261,16 @@ If you want to contribute the changes you made to the original repo, it's time t
 ::: {.alert .alert-dismissible .alert-light}
 ### Make a pull request
 
-1.  Go to your repo in GitHub, you will see that you made the last commit.
-
-![Screenshot of a forked repo in GitHub with a new commit. It shows how to star a new pull request.](images/pr1.png)
-
-2.  Navigate to the "Contribute" button.
-3.  And then to "Open pull request".
-4.  We are almost there. In this page you can change the title of the pull request and write a message for the owner of the original repo. 
-5.  Navigate to "Create pull request" button and press enter to finish the pull request.
-
-![Screenshot of GitHub showing how to add a title, message and finish a pull request](images/pr2.png)
+1.  From the terminal run `gh pr create --title "Pull request title" --body "Pull request body"`, add a title and a message in the body of the pull request. The Terminal will return the link to the pr in the web. It's useful to remember the number. 
+2. You can also add comments after opening the pull request with `gh pr comment <number of pr> --body "Some comment"`
 
 And that's it!
+
 :::
 
-The owner/s of the repo will receive an email. They can review the pull request, comment on it and eventually accept the contribution. When that happen the changes you made will apear in the repo.
+The owner/s of the repo will receive an email. They can review the pull request, comment on it and eventually accept the contribution. When that happen the changes you made will appear in the repo.
+
+The [list of GitHub commands to work with pull request](https://cli.github.com/manual/gh_pr) is long!
 
 ## Resources
 
