@@ -1,6 +1,5 @@
 ---
 title: "Developing Software Together"
-author: "Pao Corrales y Yani Bellini Saibene"
 format: 
   revealjs:
     theme: default
@@ -8,37 +7,8 @@ format:
     fontsize: "18.5pt"
 ---
 
-## Hi and welcome!
+# Hi and welcome!
 
-::: columns
-::: {.column width="50%"}
-```{r}
-#| echo: false
-#| fig.align: 'center'
-#| out.width: '50%' 
-
-knitr::include_graphics("images/pao_circle.png")
-```
-
-[fosstodon.org/\@paocorrales](https://fosstodon.org/@paocorrales)
-
-[paocorrales.github.io](https://paocorrales.github.io/)
-:::
-
-::: {.column width="50%"}
-```{r}
-#| echo: false
-#| fig.align: 'center'
-#| out.width: '50%' 
-
-knitr::include_graphics("images/elio_circle.png")
-```
-
-[mastodon.social/\@eliocamp](https://mastodon.social/@eliocamp)
-
-[eliocamp.github.io/](https://eliocamp.github.io/)
-:::
-:::
 
 ------------------------------------------------------------------------
 
@@ -55,8 +25,40 @@ knitr::include_graphics("images/elio_circle.png")
 ::: {.column width="60%"}
 ```{r}
 #| echo: false
+#| fig-alt: "Ilustration from Alison Horst that show the working directory (as a building), how files are added to the staging area and commited to the local repository (another building). The commites are pushed and pull from the remote repository (a different building) all contcted with arrows."
 
 knitr::include_graphics("https://cdn.myportfolio.com/45214904-6a61-4e23-98d6-b140f8654a40/68739659-fb6f-41e8-9813-32e1de3d82c0_rw_1920.png?h=4b046efe7664ab833358c241b10bd8e6")
+```
+:::
+:::
+
+
+------------------------------------------------------------------------
+
+## How to git
+
+Choose your own adventure:
+
+::: columns
+::: {.column width="50%"}
+Git from Rstudio
+
+```{r}
+#| echo: false
+#| fig-alt: "Screenshot of the Studio IDE for git. It shows 3 files added to the staging area an the space to write the commit message."
+
+knitr::include_graphics("images/add3.png")
+```
+:::
+
+::: {.column width="50%"}
+Git from the terminal
+
+```{r}
+#| echo: false
+#| fig-alt: "Screenshot of the terminal."
+
+knitr::include_graphics("images/terminal.png")
 ```
 :::
 :::
@@ -107,15 +109,13 @@ use_git_config(user.name = "Jane Doe",  # Your name!
 
     -   Repository name: myrepo or whatever you wish to name your new project.
 
-    -   Description: Any short description of the project.
-        Write this for humans.
+    -   Description: Any short description of the project. Write this for humans.
 
     -   Public.
 
     -   Initialize this repository with: nothing (we can set up everything from R).
 
-Before going back to RStudio, copy the url for the repository.
-For example https://github.com/paocorrales/myrepo.git
+Before going back to RStudio, copy the url for the repository. For example https://github.com/paocorrales/myrepo.git
 
 ## Clone the repository locally.
 
