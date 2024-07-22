@@ -186,7 +186,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#anatomy-of-github-repo" id="toc-anatomy-of-github-repo" class="nav-link" data-scroll-target="#anatomy-of-github-repo">Anatomy of GitHub Repo</a></li>
   <li><a href="#collaborating-with-others" id="toc-collaborating-with-others" class="nav-link" data-scroll-target="#collaborating-with-others">Collaborating with others</a>
   <ul class="collapse">
-  <li><a href="#lets-plant-some-trees" id="toc-lets-plant-some-trees" class="nav-link" data-scroll-target="#lets-plant-some-trees">Let’s plant some trees</a></li>
+  <li><a href="#a-new-ringtone-anyone" id="toc-a-new-ringtone-anyone" class="nav-link" data-scroll-target="#a-new-ringtone-anyone">A new ringtone, anyone?</a></li>
   <li><a href="#make-a-pull-request" id="toc-make-a-pull-request" class="nav-link" data-scroll-target="#make-a-pull-request">Make a pull request</a></li>
   </ul></li>
   <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources">Resources</a></li>
@@ -405,34 +405,33 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <figcaption>Concep model of the remote workflow. A foreign remote repository can be forked to an owned remote repository with the “fork” command. The remote repository is copied into a local repository with a the “clone” command. Files inside the local repository and the remote repository are synced with push and pull. The owned remote repository can be merged into the foreign remote repository with a pull request.</figcaption>
 </figure>
 </div>
-<section id="lets-plant-some-trees" class="level3">
-<h3 class="anchored" data-anchor-id="lets-plant-some-trees">Let’s plant some trees</h3>
-<p>As a fun example will collaborate with the recently open Flametree galley and do some pull request on the way.</p>
+<section id="a-new-ringtone-anyone" class="level3">
+<h3 class="anchored" data-anchor-id="a-new-ringtone-anyone">A new ringtone, anyone?</h3>
+<p>As a fun example will collaborate with my ringtone collection and do some pull request on the way.</p>
 <p>For this example we’ll keep working from the Terminal instead of using the GitHub web interface. To do that we need GitHub cli, a command-line interface to GitHub. You can find instructions on <a href="preparation.html">how to download GitHub cli in the preparation section</a>.</p>
 </section>
 <div class="alert alert-dismissible alert-light">
 <section id="fork-the-repository" class="level3">
 <h3 class="anchored" data-anchor-id="fork-the-repository">Fork the repository</h3>
 <ol type="1">
-<li>Go to <a href="https://github.com/paocorrales/flametree_gallery">github.com/paocorrales/flametree_gallery</a> and copy the url to the repo, you’ll need it to fork the repo.</li>
+<li>Go to <a href="https://github.com/paocorrales/ringtone_maker">github.com/paocorrales/ringtone_maker</a> and copy the url to the repo, you’ll need it to fork the repo.</li>
 <li>Go to the directory you want to save the new repository.</li>
-<li>On the Terminal run: <code>gh repo fork https://github.com/paocorrales/flametree_gallery.git</code></li>
+<li>On the Terminal run: <code>gh repo fork https://github.com/paocorrales/ringtone_maker.git</code></li>
 </ol>
 <p>The Terminal will clone the fork into your computer and return:</p>
-<p>`<code>* [new branch]      main       -&gt; upstream/main ✓ Cloned fork ! Repository paocorrales/flametree_gallery set as the default repository. To learn more about the default repository, run: gh repo set-default --help`</code></p>
+<p>`<code>* [new branch]      main       -&gt; upstream/main ✓ Cloned fork ! Repository paocorrales/ringtone_maker set as the default repository. To learn more about the default repository, run: gh repo set-default --help`</code></p>
 <p>Now, you have a copy of the repo in your GitHub account and in your computer. Everything is ready to star working as before.</p>
-<p>This repository is a copy of the one in the original repo. It’s a very small project with a few file. <code>template_script.R</code> includes the necessary code to create beautiful images of trees from R code (you can ignore the rest of the files).</p>
-<p>It uses the <a href="https://github.com/djnavarro/flametree"><em>flametree</em></a> library created by <a href="https://djnavarro.net/">Danielle Navarro</a>. How it works is not part of the topics of the workshop (sadly!) but it’s a good excuse to practice doing pull requests.</p>
+<p>This repository is a copy of the one in the original repo. It’s a very small project with a few file. `ringtone_maker.R`` includes the necessary code to create beautiful you new and very modern ringtone.</p>
+<p>It uses the <a href="https://github.com/keithmcnulty/Rmusic"><em>Rmusic</em></a> library and some sampling to create a short song with random notes and semitones.</p>
 </section>
 <section id="make-a-change-in-the-repo" class="level3">
 <h3 class="anchored" data-anchor-id="make-a-change-in-the-repo">Make a change in the repo</h3>
 <ol type="1">
-<li><p>Make a copy of the <code>template_script.R</code> file and change it’s name to <code>&lt;your-name.R&gt;</code></p></li>
-<li><p>Change the value of the first 3 variables in the script:</p>
+<li><p>Make a copy of the <code>ringtone_maker.R</code> file and change it’s name to <code>&lt;your-name_ringtone.R&gt;</code></p></li>
+<li><p>Change the value of the first 2 variables in the script:</p>
 <ul>
-<li><code>name</code> your name.</li>
 <li><code>seed</code> there are some random things happening there.</li>
-<li><code>shades</code> choose 4 colors.</li>
+<li><code>n_notes</code> number of notes, it will afect the length of the song.</li>
 </ul></li>
 <li><p>Save the file, <strong>add</strong> it to the staging area and <strong>commit</strong> it (<em>include only the .R file you created</em>).</p></li>
 <li><p>Push it to your remote repository.</p></li>

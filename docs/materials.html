@@ -186,7 +186,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#anatomy-of-github-repo" id="toc-anatomy-of-github-repo" class="nav-link" data-scroll-target="#anatomy-of-github-repo">Anatomy of GitHub Repo</a></li>
   <li><a href="#collaborating-with-others" id="toc-collaborating-with-others" class="nav-link" data-scroll-target="#collaborating-with-others">Collaborating with others</a>
   <ul class="collapse">
-  <li><a href="#lets-plant-some-trees" id="toc-lets-plant-some-trees" class="nav-link" data-scroll-target="#lets-plant-some-trees">Let’s plant some trees</a></li>
+  <li><a href="#a-new-ringtone-anyone" id="toc-a-new-ringtone-anyone" class="nav-link" data-scroll-target="#a-new-ringtone-anyone">A new ringtone, anyone?</a></li>
   <li><a href="#fork-the-repository" id="toc-fork-the-repository" class="nav-link" data-scroll-target="#fork-the-repository">Fork the repository</a></li>
   <li><a href="#make-a-change-in-the-repo" id="toc-make-a-change-in-the-repo" class="nav-link" data-scroll-target="#make-a-change-in-the-repo">Make a change in the repo</a></li>
   <li><a href="#make-a-pull-request" id="toc-make-a-pull-request" class="nav-link" data-scroll-target="#make-a-pull-request">Make a pull request</a></li>
@@ -393,14 +393,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <figcaption>Concep model of the remote workflow. A foreign remote repository can be forked to an owned remote repository with a “fork”. The remote repository is copied into a local repository with a “clone”. Files inside the local repository and the remote repository are synced with push and pull. The owned remote repository can be merged into the foreign remote repository with a pull request.</figcaption>
 </figure>
 </div>
-<section id="lets-plant-some-trees" class="level3">
-<h3 class="anchored" data-anchor-id="lets-plant-some-trees">Let’s plant some trees</h3>
-<p>As a fun example will collaborate with the recently open Flametree galley and do some pull request on the way.</p>
+<section id="a-new-ringtone-anyone" class="level3">
+<h3 class="anchored" data-anchor-id="a-new-ringtone-anyone">A new ringtone, anyone?</h3>
+<p>As a fun example will collaborate with my ringtone collection and do some pull request on the way.</p>
 </section>
 <section id="fork-the-repository" class="level3 alert alert-dismissible alert-light">
 <h3 class="anchored" data-anchor-id="fork-the-repository">Fork the repository</h3>
 <ol type="1">
-<li>Go to <a href="https://github.com/paocorrales/flametree_gallery">github.com/paocorrales/flametree_gallery</a></li>
+<li>Go to <a href="https://github.com/paocorrales/ringtone_maker">github.com/paocorrales/ringtone_maker</a></li>
 <li>Fork the repository using the “Fork” button on the top right corner.</li>
 </ol>
 <div class="quarto-figure quarto-figure-center">
@@ -420,23 +420,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </figure>
 </div>
 </section>
-<p>Now you have an RStudio project (that is also a repo) that is a copy of the one in the original repo. It’s a very small project with a few file. <code>template_script.R</code> includes the necessary code to create beautiful images like this:</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/tree_pao.png" class="img-fluid figure-img"></p>
-<figcaption>Image of trees created using R</figcaption>
-</figure>
-</div>
-<p>It uses the <a href="https://github.com/djnavarro/flametree"><em>flametree</em></a> library created by <a href="https://djnavarro.net/">Danielle Navarro</a>. How it works is not part of the topics of the workshop (sadly!) but it’s a good excuse to practice doing pull requests.</p>
+<p>This repository is a copy of the one in the original repo. It’s a very small project with a few file. `ringtone_maker.R`` includes the necessary code to create beautiful you new and very modern ringtone.</p>
+<p>It uses the <a href="https://github.com/keithmcnulty/Rmusic"><em>Rmusic</em></a> library and some sampling to create a short song with random notes and semitones.</p>
 <section id="make-a-change-in-the-repo" class="level3 alert alert-dismissible alert-light">
 <h3 class="anchored" data-anchor-id="make-a-change-in-the-repo">Make a change in the repo</h3>
 <ol type="1">
-<li><p>Make a copy of the <code>template_script.R</code> file and change it’s name to <code>&lt;your-name.R&gt;</code></p></li>
+<li><p>Make a copy of the <code>ringtone_maker.R</code> file and change it’s name to <code>&lt;your-name_ringtone.R&gt;</code></p></li>
 <li><p>Change the value of the first 3 variables in the script:</p>
 <ul>
-<li><code>name</code> your name.</li>
 <li><code>seed</code> there are some random things happening there.</li>
-<li><code>shades</code> choose 4 colors that you like.</li>
+<li><code>n_notes</code> number of notes, it will afect the length of the song.</li>
 </ul></li>
 </ol>
 <p>You can run the code if you want :)</p>
