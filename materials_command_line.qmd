@@ -213,42 +213,41 @@ The second situation is common when contributing to strangers' projects, such as
 
 ![Concep model of the remote workflow. A foreign remote repository can be forked to an owned remote repository with the "fork" command. The remote repository is copied into a local repository with a the "clone" command. Files inside the local repository and the remote repository are synced with push and pull. The owned remote repository can be merged into the foreign remote repository with a pull request.](images/pull-request.png)
 
-### Let's plant some trees
+### A new ringtone, anyone?
 
-As a fun example will collaborate with the recently open Flametree galley and do some pull request on the way.
+As a fun example will collaborate with my ringtone collection and do some pull request on the way.
 
 For this example we'll keep working from the Terminal instead of using the GitHub web interface. To do that we need GitHub cli, a command-line interface to GitHub. You can find instructions on [how to download GitHub cli in the preparation section](preparation.html).
 
 ::: {.alert .alert-dismissible .alert-light}
 ### Fork the repository
 
-1.  Go to [github.com/paocorrales/flametree_gallery](https://github.com/paocorrales/flametree_gallery) and copy the url to the repo, you'll need it to fork the repo.
+1.  Go to [github.com/paocorrales/ringtone_maker](https://github.com/paocorrales/ringtone_maker) and copy the url to the repo, you'll need it to fork the repo.
 2. Go to the directory you want to save the new repository.
-2.  On the Terminal run: ` gh repo fork https://github.com/paocorrales/flametree_gallery.git`
+2.  On the Terminal run: ` gh repo fork https://github.com/paocorrales/ringtone_maker.git`
 
 The Terminal will clone the fork into your computer and return:
 
 ````
  * [new branch]      main       -> upstream/main
 ✓ Cloned fork
-! Repository paocorrales/flametree_gallery set as the default repository. To learn more about the default repository, run: gh repo set-default --help`
+! Repository paocorrales/ringtone_maker set as the default repository. To learn more about the default repository, run: gh repo set-default --help`
 ```
 
 Now, you have a copy of the repo in your GitHub account and in your computer. Everything is ready to star working as before.
 
-This repository is a copy of the one in the original repo. It's a very small project with a few file. `template_script.R` includes the necessary code to create beautiful images of trees from R code (you can ignore the rest of the files).
+This repository is a copy of the one in the original repo. It's a very small project with a few file. `ringtone_maker.R`` includes the necessary code to create beautiful you new and very modern ringtone.
 
-It uses the [*flametree*](https://github.com/djnavarro/flametree) library created by [Danielle Navarro](https://djnavarro.net/). How it works is not part of the topics of the workshop (sadly!) but it's a good excuse to practice doing pull requests.
+It uses the [*Rmusic*](https://github.com/keithmcnulty/Rmusic) library and some sampling to create a short song with random notes and semitones.
 
 ### Make a change in the repo
 
-1.  Make a copy of the `template_script.R` file and change it's name to `<your-name.R>`
+1.  Make a copy of the `ringtone_maker.R` file and change it's name to `<your-name_ringtone.R>`
 
-2.  Change the value of the first 3 variables in the script:
+2.  Change the value of the first 2 variables in the script:
 
-    -   `name` your name.
     -   `seed` there are some random things happening there.
-    -   `shades` choose 4 colors.
+    -   `n_notes` number of notes, it will afect the length of the song.
 
 3.  Save the file, **add** it to the staging area and **commit** it (*include only the .R file you created*).
 4.  Push it to your remote repository.
