@@ -1,5 +1,5 @@
 ---
-title: "Waht you need to do before the workshop"
+title: "What you need to do before the workshop"
 editor: visual
 ---
 
